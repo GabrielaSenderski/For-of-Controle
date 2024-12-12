@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: VALIDAR NÚMERO PRIMO
+    Faça um programa que peça para o usuário informar um número. Identifique se o número fornecido pelo usuário é um número primo e apresente na tela.
+    */
+
+    const number = Number(prompt("Informe um número:"));
+
+    let isPrime = true;
+    if (number <= 1) {
+        isPrime = false;
+    } else if (number > 2) {
+        for (const divisor of Array.from({ length: Math.floor(Math.sqrt(number) - 1) }, (_, i) => i + 2)) {
+            if (number % divisor === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+ 
+    const result = isPrime ? "é um número primo." : "não é um número primo.";
+    document.write(`O número ${number} ${result}`);
+
+
+//ps: sor, confesso que não entendi nada dessa, vou deixar essa resposta do chatgpt pra não ficar em branco e para eu tentar entender
+
+
+</script>
